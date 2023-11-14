@@ -11,21 +11,21 @@ from tensorflow.keras.utils import img_to_array
 from keras.models import load_model
  
 #load model
-model =load_model("model/v5_pred_cott_diis1.h5")
- 
-print('@@ Model loaded')
+#model_brain =load_model("models/braindisease.h5")
+model_skin=load_model("models/skindisease.h5")
+print('model loaded on the server')
  
  
 def pred_cot_dieas(cott_plant):
   print(cott_plant)
   test_image = load_img(cott_plant, target_size = (150, 150)) # load image 
-  print("@@ Got Image for prediction")
+
    
   test_image = img_to_array(test_image)/255 # convert image to np array and normalize
   test_image = np.expand_dims(test_image, axis = 0) # change dimention 3D to 4D
    
   result = model.predict(test_image).round(3) # predict diseased palnt or not
-  print('@@ Raw result = ', result)
+ 
    
   pred = np.argmax(result) # get the index of max value
  
@@ -59,10 +59,15 @@ def home():
 @app.route("/info", methods=['GET'])
 def information():
     return render_template('information.html')
+@app.route("/info-brain", methods=['GET'])
+def informationbrain():
+    return render_template('informationbrain.html')
 @app.route("/help", methods=['GET'])
 def help():
     return render_template('help.html')
-
+@app.route("/result/<disease>",methods=['GET'])
+def result():
+    return render_template('result.html')
      
   
 # get input image from client then predict class and render respective .html page for solution
