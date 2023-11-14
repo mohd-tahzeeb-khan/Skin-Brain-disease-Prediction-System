@@ -1,0 +1,200 @@
+{% extends base.html %}
+{% block content %}
+
+
+    <section>
+        <div class="heading d-flex justify-content-center">
+            <!-- <img class="image img-fluid  rounded " src="{{ url_for('static', filename='images/Index_Background.jpg') }}" alt="Background Images"> -->
+            <img class="image img-fluid  rounded " src="/static/images/background_index.jpg" alt="Background Images">
+            <div class="content">
+                <h2 class="tag1  font-weight-bold ">Discover Your Health With Precision Diagnosis</h2>
+                <p class="tag3  font-weight-normal">Welcome to our cutting-edge platform where technology meets
+                    healthcare. Unveiling a revolutionary
+                    approach to health assessment, our website offers advanced tools for the detection of both skin and
+                    brain diseases. <br>
+                    Harnessing the power of artificial intelligence, we provide precise and reliable
+                    diagnostics that empower you to take control of your well-being. Explore the future of healthcare
+                    with
+                    us, where early detection meets user-friendly technology for a healthier tomorrow.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section>
+
+        <div class="details">
+            <h1 class=" bartab text-center mt-5 ">Predict Skin And Brain Disease & Get Cure</h1>
+            <div class="note">
+                <p class="note1">Note: 1. The Smallest Possible distance (2-4" or 5-10 cm) for a clear frame.</p>
+                <p class="note2">2. Keep in Focus and center only the best part.</p>
+                <p class="note3"> 3. The Photo should be free of foreign Objects(hair,jewelry,etc) </p>
+            </div>
+            <div>
+                <!-- {% with errors = get_flashed_messages(category_filter=["error"]) %}
+    {% if errors %}
+    <ul>
+    {% for msg in errors %}
+      <li>{{ msg }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  {% endwith %} -->
+            </div>
+
+            <h2 class="text-center mb-4" style="font-size: 2rem;">Upload Skin and Brain Disease Image</h2>
+            <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+              
+                <input type="file" id="upload-input" name="image" class="upload " accept="image/*" capture="camera"
+                    onchange="previewImage(event)">
+                <!-- <input type="submit" value="Predict" onclick="uploadImage()" > -->
+                <button type="button" class="btn" onclick="uploadImage()">Predict</button>
+            
+
+            </form>
+            <div class="preview-image">
+                <div id="result"></div>
+                <img id="preview-image" alt="Preview" src="#" style="width: 300px; height: auto;" />
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section style="margin-bottom: 100px;">
+
+        <div class="container gallery-h1">
+
+            <h1 class="text-center mt-4 mb-4">Indian Chemicals Solution Industries./भारतीय रसायन समाधान उद्योग |</h1>
+
+
+
+            <hr class="mt-2 mb-5">
+
+            <div class="row text-center text-lg-left">
+
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="https://www.dhanuka.com/products" class="d-block mb-4 h-100">
+                        <h4>Dhanuka Agritech LTD.</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/Dhanuka Agritech ltd.png') }}" alt="">
+                        <img class="img-fluid img-thumbnail" src="/static/images/Indian Brands/Dhanuka Agritech ltd.png"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="https://www.coromandel.biz/" class="d-block mb-4 h-100">
+                        <h4>Coromandel International LTD.</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/Coromandel International ltd.png') }}" alt="">
+                        <img class="img-fluid img-thumbnail"
+                            src="/static/images/Indian Brands/Coromandel International ltd.png" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="https://www.rallis.com/india-business/crop-protection" class="d-block mb-4 h-100">
+                        <h4>Rallis India</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/Ralllis.png') }}" alt="">
+                        <img class="img-fluid img-thumbnail" src="/static/images/Indian Brands/Ralllis.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="http://www.groupindogulf.com/products2.php?qwertyu=subsubcat&qwertyu_id=13"
+                        class="d-block mb-4 h-100">
+                        <h4>Indogulf Crop Sciences LTD.</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/Indogulf.png') }}" alt="">
+                        <img class="img-fluid img-thumbnail" src="/static/images/Indian Brands/Indogulf.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="https://aimcopesticides.com/products/nutrients-bio" class="d-block mb-4 h-100">
+                        <h4>AIMCO Pesticides LTD.</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/aimco.png') }}" alt="">
+                        <img class="img-fluid img-thumbnail" src="/static/images/Indian Brands/aimco.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="https://www.bharatgroup.co.in/bharat-rasayan/product.php" class="d-block mb-4 h-100">
+                        <h4>Bharat Rasayan LTD.</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/bharat.png') }}" alt="">
+                        <img class="img-fluid img-thumbnail" src="/static/images/Indian Brands/bharat.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="https://www.piindustries.com/our-business/Our-Business/products-and-services"
+                        class="d-block mb-4 h-100">
+                        <h4>PI Industries LTD.</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/pi.png') }}"alt="">
+                        <img class="img-fluid img-thumbnail" src="/static/images/Indian Brands/pi.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="https://sumichem.co.in/plant-nutrition-and-plant-growth-regulators.php"
+                        class="d-block mb-4 h-100">
+                        <h4>Sumitomo Chemicals India LTD.</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/sumitomo.png') }}" alt="">
+                        <img class="img-fluid img-thumbnail" src="/static/images/Indian Brands/sumitomo.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6 col-12">
+                    <a href="https://www.upl-ltd.com/agricultural-solutions/crop-protection/insecticides"
+                        class="d-block mb-4 h-100">
+                        <h4>UPL LTD.</h4>
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/Indian Brands/upl.png') }}" alt="">
+                        <img class="img-fluid img-thumbnail" src="/static/images/Indian Brands/upl.png" alt="">
+                    </a>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </section>  -->
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('preview-image');
+            const resultDiv = document.getElementById('result');
+
+
+            const reader = new FileReader();
+            reader.onload = function () {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+                resultDiv.innerHTML = "<p>Preview of an image</p>";
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+
+        function uploadImage() {
+            const input = document.getElementById('upload-input');
+            const resultDiv = document.getElementById('result');
+
+            const file = input.files[0];
+
+            if (!file) {
+                resultDiv.innerHTML = "<p>Please select an image</p>";
+            }
+        }
+    </script>
+
+{% endblock %}

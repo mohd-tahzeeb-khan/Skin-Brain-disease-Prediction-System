@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+
+    <title>Skin Diagnosis and Brain prognosis</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">NeuroDerm Analytica</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <!-- <a class="nav-link" href={{url_for('home')}}>Home </a> -->
+                    <a class="nav-link" href="/templates/index.html">Home </a>
+                </li>
+                <li class="nav-item active">
+                    <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
+                    <a class="nav-link" href="/templates/information.html">Information(Skin)</a>
+                </li>
+                <li class="nav-item ">
+                    <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
+                    <a class="nav-link" href="/templates/informationbrain.html">Information(Brain)</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href={{url_for('help')}}>Help</a> -->
+                    <a class="nav-link" href="/templates/help.html">Help</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Acne -->
+    <div class="container mt-2">
+        <h1 class="text-center">Acne</h1>
+        <div class="row">
+            <div class="col-md-12 ">
+                <!-- <img style='width:300px;height:300px;' src="{{ url_for('static', filename='images/fusariumwilt.jpeg') }}" class="mx-auto d-block rounded"> -->
+                <img style='width:300px;height:300px;' src="/static/images/acne.jpg" class="mx-auto d-block rounded">
+                <br>
+                <div class="d-flex justify-content-evenly mb-3 mt-4">
+                    <div class="ml-5 mr-3 px-2">
+                        <h2>Symptoms</h2>
+                        <p style="text-align: justify;
+            text-justify: inter-word;">● Comedones:
+                            - Blackheads: Open comedones caused by the oxidation of melanin in trapped debris.<br>
+                            - Whiteheads: Closed comedones where follicle openings are blocked.<br>
+
+                            ● Papules: Small, raised, red bumps.<br>
+
+                            ● Pustules: Pimples filled with pus at their tips.<br>
+
+                            ● Nodules: Large, painful lumps beneath the surface of the skin.<br>
+
+                            ● Cysts: Deep, painful, pus-filled lumps that can cause scarring.<br>
+
+                            ● Inflammation: Redness and swelling around acne lesions.<br>
+
+                            ● Scarring: In some cases, severe acne can lead to permanent scars.<br>
+
+                        </p>
+                        <br>
+                        <h2>Treatments</h2>
+                        <p style="text-align: justify;
+                text-justify: inter-word;
+              ">● Topical Treatments:
+                            - Benzoyl Peroxide: Kills bacteria and helps unclog pores.<br>
+                            - Topical Antibiotics: Reduce inflammation and kill bacteria on the skin.<br>
+
+                            ● Oral Medications:
+                            - Antibiotics: Oral antibiotics may be prescribed to reduce inflammation and control
+                            bacterial growth.<br>
+                            - Isotretinoin (Accutane): A powerful medication used for severe acne. It reduces oil
+                            production and has long-lasting effects.<br>
+
+                            ● Lifestyle and Skincare:
+                            - Gentle Cleansing: Using a mild cleanser to wash the face twice daily.<br>
+                            - Regular Exercise: Physical activity can help manage stress, which can contribute to
+                            acne.<br>
+
+                            ● Procedures:
+                            - Extraction: Removal of comedones or cysts by a dermatologist.<br>
+                            - Laser Therapy: Uses light to reduce bacteria and inflammation.<br>
+
+
+                        </p>
+                    </div>
+                    <!-- <div class="mr-3 px-2">
+                        <h2> लक्षण</h2>
+                        <p style="text-align: justify;
+                    text-justify: inter-word;">● कॉमेडोन:
+                            - ब्लैकहेड्स: फंसे हुए मलबे में मेलेनिन के ऑक्सीकरण के कारण खुले कॉमेडोन।<br>
+                            - व्हाइटहेड्स: बंद कॉमेडोन जहां कूप के उद्घाटन अवरुद्ध होते हैं।<br>
+
+                            ● पपल्स: छोटे, उभरे हुए, लाल उभार।<br>
+
+                            ● फुंसी: उनके सिरों पर मवाद से भरे दाने।<br>
+
+                            ● नोड्यूल्स: त्वचा की सतह के नीचे बड़ी, दर्दनाक गांठें।<br>
+
+                            ● सिस्ट: गहरी, दर्दनाक, मवाद से भरी गांठें जो घाव पैदा कर सकती हैं।<br>
+
+                            ● सूजन: मुँहासे के घावों के आसपास लालिमा और सूजन।<br>
+
+                            ● घाव: कुछ मामलों में, गंभीर मुँहासे स्थायी निशान का कारण बन सकते हैं।<br>
+                        </p>
+                        <br>
+                        <h2>उपचार</h2>
+                        <p style="text-align: justify;
+                        text-justify: inter-word;">● सामयिक उपचार:
+                            - बेंज़ोयल पेरोक्साइड: बैक्टीरिया को मारता है और छिद्रों को खोलने में मदद करता है।<br>
+                            - सामयिक एंटीबायोटिक्स: सूजन को कम करें और त्वचा पर बैक्टीरिया को मारें।<br>
+
+                            ● मौखिक दवाएं:
+                            - एंटीबायोटिक्स: सूजन को कम करने और नियंत्रित करने के लिए मौखिक एंटीबायोटिक्स निर्धारित की
+                            जा सकती हैं
+                            जीवाणु वृद्धि.<br>
+                            - आइसोट्रेटिनॉइन (एक्यूटेन): गंभीर मुँहासे के लिए इस्तेमाल की जाने वाली एक शक्तिशाली दवा।
+                            इससे तेल कम हो जाता है
+                            उत्पादन और इसका प्रभाव लंबे समय तक रहता है।<br>
+
+                            ● जीवनशैली और त्वचा की देखभाल:
+                            - सौम्य सफाई: दिन में दो बार चेहरे को धोने के लिए हल्के क्लींजर का उपयोग करें।<br>
+                            - नियमित व्यायाम: शारीरिक गतिविधि तनाव को प्रबंधित करने में मदद कर सकती है, जो इसमें योगदान
+                            कर सकती है
+                            मुँहासे.<br>
+
+                            ● प्रक्रियाएँ:
+                            - निष्कर्षण: त्वचा विशेषज्ञ द्वारा कॉमेडोन या सिस्ट को हटाना।<br>
+                            - लेजर थेरेपी: बैक्टीरिया और सूजन को कम करने के लिए प्रकाश का उपयोग करता है।<br>
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Eczema-->
+    <div class="container mt-2">
+        <h1 class="text-center">Eczema</h1>
+        <div class="row">
+            <div class="col-md-12 ">
+                <!-- <img style='width:300px;height:300px;'src="{{ url_for('static', filename='images/verticilliumwilt.jfif') }}" class="mx-auto d-block rounded"> -->
+                <img style='width:300px;height:300px;' src="/static/images/eczema.jpg" class="mx-auto d-block rounded">
+                <div class="d-flex justify-content-evenly mb-3 mt-4">
+                    <div class="ml-5 mr-3 px-2">
+                        <h2>Symptoms</h2>
+                        <p style="text-align: justify;
+            text-justify: inter-word;">● Itching (Pruritus): Persistent and intense itching is a hallmark symptom of
+                            eczema.<br>
+
+                            ● Red or Inflamed Skin: The affected skin may appear red, swollen, and irritated.<br>
+
+                            ● Dry Skin: Eczema often causes dry and scaly skin.<br>
+
+                            ● Rash: A rash may develop, and in some cases, it can form blisters that may ooze and crust
+                            over.<br>
+
+                            ● Cracking or Oozing: The skin may crack, especially in areas that bend, and there may be
+                            oozing of clear fluid.<br>
+
+                            ● Thickened Skin: With persistent scratching, the skin may become thickened and
+                            leathery.<br>
+
+                            ● Discolored Patches: The affected skin may become discolored, ranging from red to
+                            brownish-gray.<br>
+
+                            ● Burning Sensation: Some individuals with eczema may experience a burning sensation on the
+                            skin.<br>
+
+                        </p>
+                        <br>
+                        <h2>Treatments</h2>
+                        <p style="text-align: justify;
+                text-justify: inter-word;">● Moisturizers: Keeping the skin well-hydrated is crucial. Regular use of
+                            fragrance-free moisturizers helps prevent dryness and reduces the severity of eczema.<br>
+
+                            ● Topical Steroids: These anti-inflammatory creams or ointments can help reduce itching and
+                            inflammation. They are usually prescribed based on the severity of symptoms.<br>
+
+                            ● Topical Calcineurin Inhibitors: These medications, such as tacrolimus and pimecrolimus,
+                            are
+                            non-steroidal and can be effective in managing eczema symptoms.<br>
+
+                            ● Antihistamines: These may be recommended to help control itching, especially if it
+                            interferes with sleep.<br>
+
+                            ● Wet Wrap Therapy: In more severe cases, wet wraps can be applied to the affected areas
+                            after
+                            applying moisturizer or medication to lock in moisture and enhance the effectiveness of
+                            treatment.<br>
+
+
+                        </p>
+                    </div>
+                    <!-- <div class="mr-3 px-2">
+                        <h2> लक्षण</h2>
+                        <p style="text-align: justify;
+                    text-justify: inter-word;">● यह फसल को चौकोर और गूलर बनने की अवस्था में प्रभावित करता है<br>
+                            ● शिराओं के ब्रोंज़िंग के बाद अंतः शिरा हरित हीनता, पत्तियों का पीला पड़ना और झुलसना<br>
+                            ● पत्तियां पत्ती के किनारों और शिराओं के बीच के क्षेत्रों का सूखना प्रदर्शित करती हैं,
+                            अर्थात "टाइगर स्ट्राइप लक्षण"<br>
+                            ● प्रभावित पौधे तने और लकड़ी में गुलाबी रंग दिखाते हुए बंजर रहते हैं।
+                        </p>
+                        <br>
+                        <h2>समाधान (कीटनाशक)</h2>
+                        <p style="text-align: justify;
+                        text-justify: inter-word;">● एसिड-डिलिंटेड बीजों को 4 ग्राम/किलोग्राम कार्बोक्सिन से उपचारित
+                            करें।<br>
+                            ● जून-जुलाई के दौरान मिट्टी में मौजूद संक्रमित पौधों के अवशेषों को हटा दें और जला दें।<br>
+                            ● नाइट्रोजनी और फॉस्फेटिक उर्वरकों की संतुलित मात्रा के साथ पोटाश की बढ़ी हुई मात्रा का
+                            प्रयोग करें।<br>
+                            ● 100 टन/हेक्टेयर पर गोबर की खाद या अन्य जैविक खाद की भारी मात्रा का प्रयोग करें।<br>
+                            ● 0.05% बेनोमिल या 0.1% कार्बेन्डाजिम के साथ स्पॉट ड्रेंच
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Malign -->
+    <div class="container mt-2">
+        <h1 class="text-center">Malign</h1>
+        <div class="row">
+            <div class="col-md-12 ">
+                <!-- <img style='width:300px;height:300px;' src="{{ url_for('static', filename='images/Rhizoctonia.jpg') }}" class="mx-auto d-block rounded"> -->
+                <img style='width:300px;height:300px;' src="/static/images/malign.jpg" class="mx-auto d-block rounded">
+                <div class="d-flex justify-content-evenly mb-3 mt-4">
+                    <div class="ml-5 mr-3 px-2">
+                        <h2>Symptoms</h2>
+                        <p style="text-align: justify;
+                text-justify: inter-word;">
+                            ● Pearly or Waxy Bump: A translucent bump with visible blood vessels.<br>
+                            ● Reddish Patch: A red, irritated area that may itch or hurt.<br>
+                            ● Pink Growth: Elevated growth with a slightly rolled edge and a crusted indentation in the
+                            center.<br>
+
+                        </p>
+                        <br>
+                        <h2>Treatments</h2>
+                        <p style="text-align: justify;
+                    text-justify: inter-word;"> ● Mohs Surgery: A specialized surgery to remove the cancer layer by
+                            layer, minimizing damage to healthy tissue.<br>
+
+                            ●Topical Medications: Prescription creams or gels for superficial BCCs.<br>
+                            <br>
+
+                        </p>
+                    </div>
+                    <!-- <div class="mr-3 px-2">
+                        <h2> लक्षण</h2>
+                        <p style="text-align: justify;
+                        text-justify: inter-word;">●अंकुरित पौध बीजपत्रों पर काले धब्बे, तने के घेराव और अंकुरों की
+                            मृत्यु को दर्शाता है। <br>
+                            ● प्रभावित आधारीय तना छाल कतरन के साथ काला हो जाता है।<br>
+                            ● पूरी जड़ प्रणाली सड़ जाती है, पौधे सूख जाते हैं और आसानी से निकाले जा सकते हैं।
+                        </p>
+                        <br>
+                        <h2>समाधान (कीटनाशक)</h2>
+                        <p style="text-align: justify;
+                            text-justify: inter-word;">● ट्राइकोडर्मा विरिडे 4 ग्राम/किग्रा या स्यूडोमोनास फ्लोरेसेंस
+                            10 ग्राम/किलोग्राम बीज से उपचारित करें।<br>
+                            ● बीजों को कार्बोक्सिन या थीरम 5 ग्राम या कार्बेन्डाजिम 2 ग्राम/किलोग्राम से उपचारित
+                            करें।<br>
+                            ● 0.1% कार्बेन्डाजिम या 0.05% बेनोमिल के साथ स्पॉट ड्रेंच।<br>
+                            ● खेत की खाद 10 टन/हेक्टेयर या नीम की खली 2.5 टन/हेक्टेयर लगाएं।<br>
+                            ● बुवाई समय समायोजित करें, जल्दी बुवाई<br>
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benign -->
+    <div class="container mt-2">
+        <h1 class="text-center">Benign</h1>
+        <div class="row">
+            <div class="col-md-12 ">
+                <!-- <img style='width:300px;height:300px;' src="{{ url_for('static', filename='images/grey mildew2.jpg') }}" class="mx-auto d-block rounded"> -->
+                <img style='width:300px;height:300px;' src="/static/images/benign.jpg" class="mx-auto d-block rounded">
+                <div class="d-flex justify-content-evenly mb-3 mt-4">
+                    <div class="ml-5 mr-3 px-2">
+                        <h2>Symptoms</h2>
+                        <p style="text-align: justify;
+                text-justify: inter-word;">● Soft, movable lump: Lipomas often present as a soft, rubbery lump under
+                            the skin.<br>
+                            ● Slow growth: They usually grow slowly over time.<br>
+                            ● Painless: Lipomas are typically not painful unless they press on nearby nerves or blood
+                            vessels<br>
+                        </p>
+                        <br>
+                        <h2>Treatments</h2>
+                        <p style="text-align: justify;
+                    text-justify: inter-word;">● Observation: In many cases, no treatment is necessary if the lipoma is
+                            small, slow-growing, and not causing any discomfort.<br>
+                            ● Surgical removal: If the lipoma becomes painful or bothersome, surgical excision is an
+                            option. It's a simple procedure done under local anesthesia.<br>
+                            ● Liposuction: Some lipomas can be removed using liposuction techniques.<br>
+
+
+                        </p>
+                    </div>
+                    <!-- <div class="mr-3 px-2">
+                        <h2> लक्षण</h2>
+                        <p style="text-align: justify;
+                        text-justify: inter-word;">● शिराओं से बंधी निचली सतह पर अनियमित से कोणीय पीला पारभासी घाव और
+                            ग्रे चूर्ण वृद्धि <br>
+                            ● ऊपरी सतह पर हल्के हरे धब्बे<br>
+                            ● गंभीर मामलों में ऊपरी सतह पर सफ़ेद धूसर चूर्ण जैसा विकास होता है।<br>
+                            ● सुजाता और वरलक्ष्मी जैसी प्रतिरोधी किस्मों को उगाना।
+                        </p>
+                        <br>
+                        <h2>समाधान (कीटनाशक)</h2>
+                        <p style="text-align: justify;
+                            text-justify: inter-word;">● संक्रमित फसल अवशेषों को हटा दें और जला दें।<br>
+                            ● गर्मियों के महीनों के दौरान स्वयं बोए गए कपास के पौधों को नष्ट कर दें।<br>
+                            ● नाइट्रोजनयुक्त उर्वरकों/खादों के अत्यधिक प्रयोग से बचें।<br>
+                            ● मिट्टी की स्थिति और किस्मों के आधार पर सही दूरी अपनाएं।<br>
+                            ● फसल पर कार्बेन्डाजिम का छिड़काव करें
+                            250-375 ग्राम या घुलनशील सल्फर 1.25-2.0 किग्रा/हेक्टेयर, एक सप्ताह के बाद दोहराएं
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Hyperpigmentation -->
+    <div class="container mt-2">
+        <h1 class="text-center">Hyperpigmentation</h1>
+        <div class="row">
+            <div class="col-md-12 ">
+                <!-- <img style='width:300px;height:300px;' src="{{ url_for('static', filename='images/bacterialimg.jfif') }}" class="mx-auto d-block rounded"> -->
+                <img style='width:300px;height:300px;' src="/static/images/pigment.jpg" class="mx-auto d-block rounded">
+                <div class="d-flex justify-content-evenly mb-3 mt-4">
+                    <div class="ml-5 mr-3 px-2">
+                        <h2>Symptoms</h2>
+                        <p style="text-align: justify;
+                text-justify: inter-word;">● Darkened Skin: Areas of the skin become darker than the surrounding skin.
+                            Spots or Patches: Common forms include age spots, melasma, and post-inflammatory
+                            hyperpigmentation.<br>
+
+
+                            ● Sun Exposure: UV rays stimulate melanin production.
+                            Hormonal Changes: Pregnancy (melasma), birth control pills.
+                            Inflammation or Injury: Post-inflammatory hyperpigmentation after skin injury or
+                            inflammation.<br>
+
+                        </p>
+                        <br>
+                        <h2>Treatments</h2>
+                        <p style="text-align: justify;
+                    text-justify: inter-word;">
+                            ● Topical Lightening Agents: Products containing ingredients like hydroquinone, kojic acid,
+                            alpha arbutin, or vitamin C.<br>
+                            ● Chemical Peels: Exfoliate the skin, reducing pigmentation.<br>
+                            ● Laser Therapy: Targets melanin to break down hyperpigmented areas.<br>
+                            ● Microdermabrasion: Exfoliates the outer layer of skin, improving texture and
+                            appearance.<br>
+                            ● Sun Protection: Essential to prevent further pigmentation. Regular use of sunscreen is
+                            crucial.<br>
+
+
+
+                        </p>
+                    </div>
+                    <!-- <div class="mr-3 px-2">
+                        <h2> लक्षण</h2>
+                        <p style="text-align: justify;
+                        text-justify: inter-word;">● पानी से लथपथ, गोलाकार या अनियमित घाव
+                            बीजपत्र जो पर्णवृंत और तने तक फैल जाते हैं और अंत में अंकुर मुरझा जाते हैं और मर जाते हैं
+                            जिसे अंकुर झुलसा कहा जाता है<br>
+                            ● पत्तियों की निचली सतह पर छोटे, गहरे हरे, पानी से भीगे हुए क्षेत्र विकसित हो जाते हैं,
+                            धीरे-धीरे बड़े हो जाते हैं और कोणीय हो जाते हैं
+                            शिराओं और शिराओं द्वारा प्रतिबंधित और पत्तियों की दोनों सतह पर धब्बे दिखाई देते हैं (कोणीय
+                            पत्ती का धब्बा)
+                        </p>
+                        <br>
+                        <h2>समाधान (कीटनाशक)</h2>
+                        <p style="text-align: justify;
+                            text-justify: inter-word;">● कपास के बीजों को डिलिंट करें
+                            केंद्रित सल्फ्यूरिक एसिड 100 मिलीलीटर / किग्रा बीज पर।<br>
+                            ● एसिड डिलिंटेड बीजों को 2 ग्राम/किग्रा पर कार्बोक्सिन या ऑक्सीकारबॉक्सिन से उपचारित
+                            करें।<br>
+                            ● संक्रमित पौधे के मलबे को हटा दें और नष्ट कर दें।<br>
+                            ● स्वयंसेवी कपास के पौधों और खरपतवार मेजबानों को हटा दें।
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <title>Skin Diagnosis and Brain prognosis</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .card-style {
+            background-color: #dcdcdc;
+
+        }
+
+        .content {
+            padding: 15px;
+            color: white;
+            background-color: rgb(153, 156, 150);
+            /* font-size: 1rem; */
+        }
+
+        @media (max-width: 430px) and (min-width: 200px) {
+
+
+            .contents {
+                font-size: 0.6rem;
+                color: chartreuse;
+            }
+
+            .content-h1 {
+
+                font-size: 1rem;
+            }
+        }
+
+        .border img {
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">NeuroDerm Analytica</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <!-- <a class="nav-link" href={{url_for('home')}}>Home </a> -->
+                    <a class="nav-link" href="/templates/index.html">Home </a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
+                    <a class="nav-link" href="/templates/information.html">Information </a>
+                </li>
+                <li class="nav-item ">
+                    <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
+                    <a class="nav-link" href="/templates/informationbrain.html">Information(Brain)</a>
+                </li>
+                <li class="nav-item ">
+                    <!-- <a class="nav-link" href={{url_for('help')}}>Help</a> -->
+                    <a class="nav-link" href="/templates/help.html">Help</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-12">
+        <div class="row mb-5">
+
+            <div class="col-sm" style="margin-bottom: 23px; margin-top: 50px;">
+                <span class="border border-primary">
+                    <img style="width:25rem; height:30rem;" src="{{ user_image }}" alt="User Image"
+                        class="img-thumbnail">
+
+
+
+                </span>
+            </div>
+
+            <div class="col-sm mt-5">
+
+                <div>
+                    <h1 style="padding: 15px; background-color: rgb(255, 0, 0); color: rgb(0, 0, 0);"
+                        class="text-center mb-5 content-h1 rounded">
+                        {{pred_output}} </h1>
+                </div>
+
+                <h2>Disease Name/</span></h2>
+                <h4 style="line-height: 100%;">Acne</h4>
+                <hr class="w-100 mx-auto ">
+            </div>
+        </div>
+
+
+        <h1> Treatment </h1>
+        <p><strong>
+                <h3>Use any one Systemic Chemicals, which contain</h3>
+            </strong></p<br>
+
+        <h5>
+            <ul>
+                ● Topical Treatments:
+                - Benzoyl Peroxide: Kills bacteria and helps unclog pores.<br>
+                - Topical Antibiotics: Reduce inflammation and kill bacteria on the skin.<br>
+
+                ● Oral Medications:
+                - Antibiotics: Oral antibiotics may be prescribed to reduce inflammation and control
+                bacterial growth.<br>
+                - Isotretinoin (Accutane): A powerful medication used for severe acne. It reduces oil
+                production and has long-lasting effects.<br>
+
+                ● Lifestyle and Skincare:
+                - Gentle Cleansing: Using a mild cleanser to wash the face twice daily.<br>
+                - Regular Exercise: Physical activity can help manage stress, which can contribute to
+                acne.<br>
+
+                ● Procedures:
+                - Extraction: Removal of comedones or cysts by a dermatologist.<br>
+                - Laser Therapy: Uses light to reduce bacteria and inflammation.<br>
+            </ul>
+        </h5>
+
+
+
+        <!-- <p><strong><h3>किसी एक प्रणालीगत रसायन का उपयोग करें, जिसमें शामिल हो</h3></strong></p>
+        <p><h5>सल्फ्यूरिक एसिड / कार्बोक्सिन / ऑक्सीकारबॉक्सिन स्ट्रेप्टोमाइसिन सल्फेट 100 ग्राम और ऑक्सीक्लिराइड 500 ग्राम/एसीआर का छिड़काव करें</h5></p>
+        <h4>Steps:</h4><h5><ul>
+            <li>एसिड डिलिंटेड बीजों को 4 ग्राम/किलोग्राम कार्बोक्सिन से उपचारित करें।</li>
+            <li>जून-जुलाई के दौरान संक्रमित पौधों के अवशेषों को मिट्टी से हटा दें और जला दें।.</li>
+            <li>नाइट्रोजनी और फॉस्फेटिक उर्वरकों की संतुलित मात्रा के साथ पोटाश की बढ़ी हुई मात्रा का प्रयोग करें।</li>
+            <li>100 टन/हेक्टेयर की दर से गोबर की खाद या अन्य जैविक खाद की भारी मात्रा का प्रयोग करें।</li>
+            <li>0.05% बेनोमिल या 0.1% कार्बेन्डाजिम के साथ स्पॉट ड्रेंच।</li>
+        </ul></h5> -->
+    </div>
+
+
+    <br><br><br><br>
+    <hr>
+    <h3 style="color:red;"><strong>Disclaimer :</strong>All Chemicals and their Doses are not suggested by any Expert.
+        All the Product and doses are reffered by Google.</h3>
+    <!-- <h3 style="color:red;"><strong>अस्वीकरण :</strong>जितने भी प्रोडक्ट और उसके दोसेस दिए है वो सब किसी भी एक्सपर्ट्स ने सुझाए नहीं  है| सभी उत्पाद और खुराक Google द्वारा रेफर किए जाते हैं।</h3> -->
+    <hr>
+
+
+</body>
+
+</html>

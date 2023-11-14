@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+    integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <title>Skin Diagnosis and Brain prognosis</title>
+
+
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">NeuroDerm Analytica</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <!-- <a class="nav-link" href={{url_for('home')}}>Home </a> -->
+          <a class="nav-link" href="/templates/index.html">Home </a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
+          <a class="nav-link" href="/templates/information.html">Information </a>
+        </li>
+        <li class="nav-item ">
+          <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
+          <a class="nav-link" href="/templates/informationbrain.html">Information(Brain)</a>
+      </li>
+        <li class="nav-item active">
+          <!-- <a class="nav-link" href={{url_for('help')}}>Help</a> -->
+          <a class="nav-link" href="/templates/help.html">Help</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section>
+    <div class="container">
+      <h3 class="text-center mt-4 mb-4 pb-2 text-primary fw-bold">How To Use This Application</h3>
+      <p class="text-center mb-5">
+        Overall Working of This Application
+      </p>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <h6 class="mb-3 text-primary"><i class=" text-primary pe-2"></i>Go To NeuroDerm Analytica<br><br></h6>
+          <div class="d-block mb-4 h-100">
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/help/1.png') }}" alt=""> -->
+              <img class="img-fluid img-thumbnail" src="/static/images/help/1.jpg" alt="">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <h6 class="mb-3 text-primary"><i class="text-primary pe-2"></i> Scroll Down To predict Button<br><br>
+          </h6>
+          <div class="d-block mb-4 h-100">
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/help/2.png') }}" alt=""> -->
+              <img class="img-fluid img-thumbnail" src="/static/images/help/2.jpg" alt="">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <h6 class="mb-3 text-primary"><i class=" text-primary pe-2"></i> Click on Choose file Upload<br><br></h6>
+          <div class="d-block mb-4 h-100">
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/help/3.png') }}" alt="" -->
+              <img class="img-fluid img-thumbnail" src="/static/images/help/3.jpg" alt="">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <h6 class="mb-3 text-primary"><i class=" text-primary pe-2"></i> Upload An Image<br><br>          </h6>
+          <div class="d-block mb-4 h-100">
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/help/6.png') }}" alt=""> -->
+              <img class="img-fluid img-thumbnail" src="/static/images/help/4.jpg" alt="">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <h6 class="mb-3 text-primary"><i class=" text-primary pe-2"></i> Click On Predict button<br><br></h6>
+          <div class="d-block mb-4 h-100">
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/help/4.png') }}" alt=""> -->
+              <img class="img-fluid img-thumbnail" src="/static/images/help/5.jpg" alt="">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <h6 class="mb-3 text-primary"><i class=" text-primary pe-2"></i> Prediction Will Be Shown<br><br></h6>
+          <div class="d-block mb-4 h-100">
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/help/5.png') }}" alt=""> -->
+              <img class="img-fluid img-thumbnail" src="/static/images/help/6.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
