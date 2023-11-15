@@ -1,87 +1,5 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
-        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
-
-    <title>Skin Diagnosis and Brain prognosis</title>
-
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-
-        .card-style {
-            background-color: #dcdcdc;
-
-        }
-
-        .content {
-            padding: 15px;
-            color: white;
-            background-color: rgb(153, 156, 150);
-            /* font-size: 1rem; */
-        }
-
-        @media (max-width: 430px) and (min-width: 200px) {
-
-
-            .contents {
-                font-size: 0.6rem;
-                color: chartreuse;
-            }
-
-            .content-h1 {
-
-                font-size: 1rem;
-            }
-        }
-
-        .border img {
-            border-radius: 15px;
-            border: 2px solid black;
-        }
-    </style>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">NeuroDerm Analytica</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <!-- <a class="nav-link" href={{url_for('home')}}>Home </a> -->
-                    <a class="nav-link" href="/templates/index.html">Home </a>
-                </li>
-                <li class="nav-item">
-                    <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
-                    <a class="nav-link" href="/templates/information.html">Information </a>
-                </li>
-                <li class="nav-item ">
-                    <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
-                    <a class="nav-link" href="/templates/informationbrain.html">Information(Brain)</a>
-                </li>
-                <li class="nav-item ">
-                    <!-- <a class="nav-link" href={{url_for('help')}}>Help</a> -->
-                    <a class="nav-link" href="/templates/help.html">Help</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
+{% extends 'base.html' %}
+{% block content %}
     <div class="container my-12">
         <div class="row mb-5">
 
@@ -160,6 +78,4 @@
     <hr>
 
 
-</body>
-
-</html>
+{% endblock %}

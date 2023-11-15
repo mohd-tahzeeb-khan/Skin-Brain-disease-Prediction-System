@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='help.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='result.css')}}">
 
     <title>Skin Diagnosis and Brain prognosis</title>
 </head>
@@ -25,19 +28,19 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <!-- <a class="nav-link" href={{url_for('home')}}>Home </a> -->
-                    <a class="nav-link" href="/templates/index.html">Home </a>
+                    <a class="nav-link" href="/">Home </a>
                 </li>
                 <li class="nav-item">
                     <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
-                    <a class="nav-link" href="/templates/information.html">Information </a>
+                    <a class="nav-link" href="/info">Information </a>
                 </li>
                 <li class="nav-item ">
                     <!-- <a class="nav-link" href={{url_for('information')}}>Information </a> -->
-                    <a class="nav-link" href="/templates/informationbrain.html">Information(Brain)</a>
+                    <a class="nav-link" href="/info-brain">Information(Brain)</a>
                 </li>
                 <li class="nav-item">
                     <!-- <a class="nav-link" href={{url_for('help')}}>Help</a> -->
-                    <a class="nav-link" href="/templates/help.html">Help</a>
+                    <a class="nav-link" href="/help">Help</a>
                 </li>
             </ul>
         </div>

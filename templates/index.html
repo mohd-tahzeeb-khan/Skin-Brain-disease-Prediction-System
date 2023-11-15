@@ -1,11 +1,10 @@
-{% extends base.html %}
+{% extends "base.html" %}
 {% block content %}
 
 
     <section>
         <div class="heading d-flex justify-content-center">
-            <!-- <img class="image img-fluid  rounded " src="{{ url_for('static', filename='images/Index_Background.jpg') }}" alt="Background Images"> -->
-            <img class="image img-fluid  rounded " src="/static/images/background_index.jpg" alt="Background Images">
+            <img class="image img-fluid  rounded " src="{{url_for('static', filename='images/background_index.jpg')}}" alt="Background Images">
             <div class="content">
                 <h2 class="tag1  font-weight-bold ">Discover Your Health With Precision Diagnosis</h2>
                 <p class="tag3  font-weight-normal">Welcome to our cutting-edge platform where technology meets
@@ -16,7 +15,9 @@
                     diagnostics that empower you to take control of your well-being. Explore the future of healthcare
                     with
                     us, where early detection meets user-friendly technology for a healthier tomorrow.</p>
-            </div>
+            
+        </div>
+            
         </div>
     </section>
 
@@ -26,31 +27,21 @@
     <section>
 
         <div class="details">
-            <h1 class=" bartab text-center mt-5 ">Predict Skin And Brain Disease & Get Cure</h1>
+            <h1 class=" bartab text-center mt-5 ">Predict Skin Disease & Get Cure</h1>
             <div class="note">
                 <p class="note1">Note: 1. The Smallest Possible distance (2-4" or 5-10 cm) for a clear frame.</p>
                 <p class="note2">2. Keep in Focus and center only the best part.</p>
                 <p class="note3"> 3. The Photo should be free of foreign Objects(hair,jewelry,etc) </p>
             </div>
             <div>
-                <!-- {% with errors = get_flashed_messages(category_filter=["error"]) %}
-    {% if errors %}
-    <ul>
-    {% for msg in errors %}
-      <li>{{ msg }}</li>
-    {% endfor %}
-    </ul>
-    {% endif %}
-  {% endwith %} -->
             </div>
 
-            <h2 class="text-center mb-4" style="font-size: 2rem;">Upload Skin and Brain Disease Image</h2>
-            <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+            <h2 class="text-center mb-4" style="font-size: 2rem;">Upload Skin Disease Image</h2>
+            <form action="/predict-skin" method="post" enctype="multipart/form-data" onsubmit="showloading()">
               
                 <input type="file" id="upload-input" name="image" class="upload " accept="image/*" capture="camera"
                     onchange="previewImage(event)">
-                <!-- <input type="submit" value="Predict" onclick="uploadImage()" > -->
-                <button type="button" class="btn" onclick="uploadImage()">Predict</button>
+                <button type="submit" class="btn" onclick="uploadImage()">Predict</button>
             
 
             </form>
@@ -60,10 +51,33 @@
             </div>
         </div>
     </section>
+    <section>
 
+        <div class="details">
+            <h1 class=" bartab text-center mt-5 ">Predict Brain Disease & Get Cure</h1>
+            <div class="note">
+                <p class="note1">Note: 1. The Smallest Possible distance (2-4" or 5-10 cm) for a clear frame.</p>
+                <p class="note2">2. Keep in Focus and center only the best part.</p>
+                <p class="note3"> 3. The Photo should be free of foreign Objects(hair,jewelry,etc) </p>
+            </div>
+            <div>
+            </div>
 
-    <!-- <section style="margin-bottom: 100px;">
+            <h2 class="text-center mb-4" style="font-size: 2rem;">Upload Brain Disease Image</h2>
+            <form action="/predict-brain" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+              
+                <input type="file" id="upload-input" name="image" class="upload " accept="image/*" capture="camera"
+                    onchange="previewImage(event)">
+                <button type="submit" class="btn">Predict</button>
+            
 
+            </form>
+            <div class="preview-image">
+                <div id="result"></div>
+                <img id="preview-image" alt="Preview" src="#" style="width: 300px; height: auto;" />
+            </div>
+        </div>
+    </section>
         <div class="container gallery-h1">
 
             <h1 class="text-center mt-4 mb-4">Indian Chemicals Solution Industries./भारतीय रसायन समाधान उद्योग |</h1>
@@ -152,7 +166,7 @@
 
         </div>
 
-    </section>  -->
+    </section>
 
 
 
