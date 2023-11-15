@@ -1,0 +1,36 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.card-style {
+    background-color: #dcdcdc;
+
+}
+
+.content {
+    padding: 15px;
+    color: white;
+    background-color: rgb(153, 156, 150);
+    /* font-size: 1rem; */
+}
+
+@media (max-width: 430px) and (min-width: 200px) {
+
+
+    .contents {
+        font-size: 0.6rem;
+        color: chartreuse;
+    }
+
+    .content-h1 {
+
+        font-size: 1rem;
+    }
+}
+
+.border img {
+    border-radius: 15px;
+    border: 2px solid black;
+}
