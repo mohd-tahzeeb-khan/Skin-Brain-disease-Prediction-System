@@ -30,19 +30,13 @@ def predict_skin_disease(skinImage):
   pred = np.argmax(result) # get the index of max value
  
   if pred == 0:
-    return "Bacterial Blight Cotton Plant", 'bacterial_blight_cotton.html' # if index 0 burned leaf
+    return "Ekzama Skin" # if index 0 burned leaf
   elif pred == 1:
-      return 'Curl Virus', 'curl_Disease.html' # # if index 1
+      return 'Acne Skin' # if index 1
   elif pred == 2:
-      return 'Diseased Cotton Leaf', 'disease_plant_leaf.html'  # if index 2  fresh leaf
+      return 'Malign Skin'  # if index 2  fresh leaf
   elif pred == 3:
-      return 'Diseased Cotton Plant', 'disease_plant.html' # # if index 1
-  elif pred == 4:
-      return 'Fresh Cotton Leaf', 'healthy_plant_leaf.html'  # if index 2  fresh leaf
-  elif pred == 5:
-      return 'Healthy Cotton Plant', 'healthy_plant.html'  # if index 2  fresh leaf
-  elif pred == 6:
-      return 'Fussarium Wilt', 'Fussarium_wilt.html'  # if index 2  fresh leaf
+      return 'Normal Skin'# # if index 1
   else:
     print("No Image Found!")
 #----------------------------------------------------------------------------------------------- 
@@ -131,9 +125,9 @@ def predictskin():
         file.save(file_path)
  
         print("@@ Predicting class......")
-        pred, output_page = predict_skin_disease(skinImage=file_path)
+        pred= predict_skin_disease(skinImage=file_path)
                
-        return render_template(output_page, pred_output = pred, user_image = file_path)
+        return render_template('result.html', pred_output = pred, user_image = file_path)
      
 # For local system & cloud
 if __name__ == "__main__":
