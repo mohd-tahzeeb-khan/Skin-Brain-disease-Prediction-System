@@ -10,15 +10,14 @@ from tensorflow.keras.utils import load_img
 from tensorflow.keras.utils import img_to_array
 from keras.models import load_model
  
-#load model
+#-----------------------------Deep Learning Model Configuration----------------------------
 model_brain =load_model("models/braindisease.h5")
 model_skin=load_model("models/skindisease.h5")
-print('model loaded on the server')
- 
+#------------------------------------------------------------------------------------------
 #------------------------------------------Skin Disease-------------------------------------
 def predict_skin_disease(skinImage):
   print(skinImage)
-  test_image = load_img(skinImage, target_size = (224, 224)) # load image 
+  test_image = load_img(skinImage, target_size = (224, 224)) # load image with custom sizing
 
    
   test_image = img_to_array(test_image)/255 # convert image to np array and normalize
@@ -30,13 +29,13 @@ def predict_skin_disease(skinImage):
   pred = np.argmax(result) # get the index of max value
  
   if pred == 0:
-    return "Ekzama Skin" # if index 0 burned leaf
+    return "Ekzama Skin" # if index is 0 then Ekzama
   elif pred == 1:
-      return 'Acne Skin' # if index 1
+      return 'Acne Skin' # if index is 1 then Acne 
   elif pred == 2:
-      return 'Malign Skin'  # if index 2  fresh leaf
+      return 'Malign Skin'  # if index is  2 then Malign
   elif pred == 3:
-      return 'Normal Skin'# # if index 1
+      return 'Normal Skin'# if index is 3 then Normal
   else:
     print("No Image Found!")
 #----------------------------------------------------------------------------------------------- 
@@ -55,19 +54,15 @@ def predict_brain_disease(brainImage):
   pred = np.argmax(result) # get the index of max value
  
   if pred == 0:
-    return "Bacterial Blight Cotton Plant", 'bacterial_blight_cotton.html' # if index 0 burned leaf
+    return "Alzeimer Mild Demented"# if index is 0 then Alzeimer mild
   elif pred == 1:
-      return 'Curl Virus', 'curl_Disease.html' # # if index 1
+      return 'Alzeimer Moderate Demented'# if index is 1 then Alzeimer mild
   elif pred == 2:
-      return 'Diseased Cotton Leaf', 'disease_plant_leaf.html'  # if index 2  fresh leaf
+      return 'Glioma'# if index is 2 then Glioma
   elif pred == 3:
-      return 'Diseased Cotton Plant', 'disease_plant.html' # # if index 1
+      return 'Meningioma'# if index is 3 thenmeningioma
   elif pred == 4:
-      return 'Fresh Cotton Leaf', 'healthy_plant_leaf.html'  # if index 2  fresh leaf
-  elif pred == 5:
-      return 'Healthy Cotton Plant', 'healthy_plant.html'  # if index 2  fresh leaf
-  elif pred == 6:
-      return 'Fussarium Wilt', 'Fussarium_wilt.html'  # if index 2  fresh leaf
+      return 'No-Tumor'# if index is 4 then No tumor
   else:
     print("No Image Found!")
      
@@ -108,9 +103,9 @@ def predictbrain():
         file.save(file_path)
  
         print("@@ Predicting class......")
-        pred, output_page = predict_brain_disease(brainImage=file_path)
+        pred = predict_brain_disease(brainImage=file_path)
                
-        return render_template(output_page, pred_output = pred, user_image = file_path)
+        return render_template('result.html', pred_output = pred, user_image = file_path)
 @app.route("/predict-skin", methods = ['GET','POST'])
 def predictskin():
      if request.method == 'POST':
