@@ -125,9 +125,10 @@ def predictskin():
  
         print("@@ Predicting class......")
         pred= predict_skin_disease(skinImage=file_path)
-               
-        return render_template(result_page, pred_output = pred, user_image = file_path)
-     
+        data={
+            'disease':pred
+        }
+        return render_template(result_page, data = data, user_image = file_path)
 # For local system & cloud
 if __name__ == "__main__":
     #app.run(debug = False)
