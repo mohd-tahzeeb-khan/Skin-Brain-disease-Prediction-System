@@ -9,7 +9,9 @@ from tensorflow.keras.utils import load_img
 #from keras.preprocessing.image import img_to_array
 from tensorflow.keras.utils import img_to_array
 from keras.models import load_model
- 
+#-----------------------------HTML Pages Configuration------------------------------------
+result_page='result.html'
+#-----------------------------------------------------------------------------------------
 #-----------------------------Deep Learning Model Configuration----------------------------
 model_brain =load_model("models/braindisease.h5")
 model_skin=load_model("models/skindisease.h5")
@@ -85,7 +87,7 @@ def help():
     return render_template('help.html')
 @app.route("/result/<disease>",methods=['GET'])
 def result():
-    return render_template('result.html')
+    return render_template(result_page)
      
   
 # get input image from client then predict class and render respective .html page for solution
@@ -104,8 +106,10 @@ def predictbrain():
  
         print("@@ Predicting class......")
         pred = predict_brain_disease(brainImage=file_path)
-               
-        return render_template('result.html', pred_output = pred, user_image = file_path)
+        data={
+            'disease':pred
+        }
+        return render_template(result_page, data = data, user_image = file_path)
 @app.route("/predict-skin", methods = ['GET','POST'])
 def predictskin():
      if request.method == 'POST':
@@ -122,7 +126,7 @@ def predictskin():
         print("@@ Predicting class......")
         pred= predict_skin_disease(skinImage=file_path)
                
-        return render_template('result.html', pred_output = pred, user_image = file_path)
+        return render_template(result_page, pred_output = pred, user_image = file_path)
      
 # For local system & cloud
 if __name__ == "__main__":
