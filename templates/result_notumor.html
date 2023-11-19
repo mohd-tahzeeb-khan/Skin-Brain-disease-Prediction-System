@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container my-12">
+        <div class="row mb-5">
+
+            <div class="col-sm" style="margin-bottom: 23px; margin-top: 50px;">
+                <span class="border border-primary">
+                    <img style="width:25rem; height:30rem;" src="{{ user_image }}" alt="User Image"
+                        class="img-thumbnail">
+
+
+
+                </span>
+            </div>
+
+            <div class="col-sm mt-5">
+
+                <div>
+                    <h1 style="padding: 15px; background-color: rgb(255, 0, 0); color: rgb(0, 0, 0);"
+                        class="text-center mb-5 content-h1 rounded">
+                        {{data.disease}} </h1>
+                </div>
+
+                <h2>Disease Name</span></h2>
+                <h4 style="line-height: 100%;">{{data.disease}}</h4>
+                <hr class="w-100 mx-auto ">
+            </div>
+        </div>
+
+
+        <h1> Treatment </h1>
+        <h5><h4>While there is no definitive way to prevent brain tumors, there are certain lifestyle factors and risk-reducing strategies that may help lower the chances of developing one. Here are some potential preventive measures:</h4>
+            <ul>
+                <strong>Avoid exposure to ionizing radiation:</strong><br> Excessive exposure to high-energy radiation, such as from X-rays, gamma rays, or radon gas, can increase the risk of brain tumors, particularly in children. Limiting unnecessary medical imaging procedures and minimizing exposure to radon gas through proper ventilation and home inspections can help reduce this risk.<br>
+                <strong>Minimize exposure to environmental toxins:</strong><br> Certain environmental chemicals, such as pesticides and solvents, have been linked to an increased risk of brain tumors. While the evidence is not conclusive, taking precautions to reduce exposure to these substances, such as using non-toxic cleaning products and avoiding heavily treated agricultural products, may be beneficial.<br>
+                <strong>Maintain a healthy lifestyle:</strong><br> A healthy lifestyle that includes a balanced diet, regular exercise, and adequate sleep can contribute to overall well-being and potentially lower the risk of various health conditions, including brain tumors. A diet rich in fruits, vegetables, and whole grains, combined with regular physical activity, can promote overall health and reduce inflammation, which may play a role in tumor. <br>
+                <strong>Manage stress levels:</strong><br> Chronic stress can negatively impact the immune system and overall health, potentially increasing the risk of various health problems, including brain tumors. Practicing stress-management techniques such as mindfulness meditation, yoga, or deep breathing exercises can help promote mental and emotional well-being and reduce the impact of stress on the body <br>
+                <strong>Maintain a healthy weight:</strong><br> Obesity is associated with an increased risk of various health conditions, including some types of brain tumors. Maintaining a healthy weight through a balanced diet and regular exercise can help reduce overall health risks. <br>
+                <strong>Get regular medical checkups:</strong><br> Regular medical checkups can help detect any potential health concerns early on, including signs of brain tumors. Prompt diagnosis and treatment can improve prognosis and increase the chances of successful treatment. <br>
+                </body>
+ 
+
+            </ul>
+        </h5>
+    </div>
+
+
+    <br><br><br><br>
+    <hr>
+    <h3 style="color:red;"><strong>Disclaimer :</strong>All Chemicals and their Doses are not suggested by any Expert.
+        All the Product and doses are reffered by Google.</h3>
+    <hr>
+
+
+{% endblock %}
