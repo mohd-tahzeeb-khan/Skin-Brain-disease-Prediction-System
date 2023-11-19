@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container my-12">
+        <div class="row mb-5">
+
+            <div class="col-sm" style="margin-bottom: 23px; margin-top: 50px;">
+                <span class="border border-primary">
+                    <img style="width:25rem; height:30rem;" src="{{ user_image }}" alt="User Image"
+                        class="img-thumbnail">
+
+
+
+                </span>
+            </div>
+
+            <div class="col-sm mt-5">
+
+                <div>
+                    <h1 style="padding: 15px; background-color: rgb(255, 0, 0); color: rgb(0, 0, 0);"
+                        class="text-center mb-5 content-h1 rounded">
+                        {{data.disease}} </h1>
+                </div>
+
+                <h2>Disease Name</span></h2>
+                <h4 style="line-height: 100%;">{{data.disease}}</h4>
+                <hr class="w-100 mx-auto ">
+            </div>
+        </div>
+
+
+        <h1> Treatment </h1>
+        <h5>There are several ways to treat acne. Each type of treatment varies based on your age, the type of acne you have and the severity. A healthcare provider might recommend taking oral medications, using topical medications or using medicated therapies to treat your skin. The goal of acne treatment is to stop new pimples from forming and to heal the existing blemishes on your skin.
+            <ul>
+                ● Benzoyl Peroxide<br>
+                - This is available as an over-the-counter product (such as Clearasil®, Stridex® and PanOxyl®) as a leave-on gel or wash.<br>
+                - It targets surface bacteria, which often aggravates acne.<br>
+                - Lower concentrations and wash formulations are less irritating to your skin.<br>
+
+                ● Azelaic Acid:<br>
+                - This is a natural acid found in various grains such as barley, wheat and rye.<br>
+                -  It kills microorganisms on the skin and reduces swelling.<br>
+
+                ● Retinoids:<br>
+                -   Retinol, such as Retin-A®, Tazorac® and Differin®, which is available without a prescription, breaks up blackheads and whiteheads and helps prevent clogged pores, the first signs of acne.<br>
+                -   Most people are candidates for retinoid therapy. These medications are not spot treatments and must be used on the entire area of skin affected by acne to prevent the formation of new pimples.<br>
+                -   You often need to use these for several months before noticing positive results.<br>
+
+                ● Antibiotic:<br>
+                -   Topical antibiotics like clindamycin and erythromycin control surface bacteria that aggravate and cause acne.<br>
+                -   Antibiotics are more effective when combined with benzoyl peroxide.<br>
+
+                ● Dapsone:<br>
+                -   Dapsone is a topical gel, which also has antibacterial properties.<br>
+                -   It treats inflamed acne.
+            </ul>
+        </h5>
+    </div>
+
+
+    <br><br><br><br>
+    <hr>
+    <h3 style="color:red;"><strong>Disclaimer :</strong>All Chemicals and their Doses are not suggested by any Expert.
+        All the Product and doses are reffered by Google.</h3>
+    <hr>
+
+
+{% endblock %}
