@@ -149,9 +149,7 @@ def informationbrain():
 @app.route("/help", methods=['GET'])
 def help():
     return render_template('help.html')
-@app.route("/result/<disease>",methods=['GET'])
-def result():
-    return render_template(result_page)
+
      
   
 # get input image from client then predict class and render respective .html page for solution
