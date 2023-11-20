@@ -1,81 +1,40 @@
-{% extends 'base.html' %}
-{% block content %}
-    <div class="container my-12">
-        <div class="row mb-5">
-
-            <div class="col-sm" style="margin-bottom: 23px; margin-top: 50px;">
-                <span class="border border-primary">
-                    <img style="width:25rem; height:30rem;" src="{{ user_image }}" alt="User Image"
-                        class="img-thumbnail">
-
-
-
-                </span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='result.css')}}">
+    <title>{{data.disease_name}}</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="photo-left">
+            <img src="{{user_image}}" alt="">
+        </div>
+        <div class="right">
+            <div class="heading-right">
+                <h1 class="Disease-name">{{data.disease_name|safe}}</h1>
             </div>
-
-            <div class="col-sm mt-5">
-
-                <div>
-                    <h1 style="padding: 15px; background-color: rgb(255, 0, 0); color: rgb(0, 0, 0);"
-                        class="text-center mb-5 content-h1 rounded">
-                        {{data.disease}} </h1>
-                </div>
-
-                <h2>Disease Name/</span></h2>
-                <h4 style="line-height: 100%;">{{data.disease}}</h4>
-                <hr class="w-100 mx-auto ">
+            <div class="define-right-bottom">
+                <h3>Abstraction:</h3>
+                <p>{{data.abstraction|safe}}</p>
             </div>
         </div>
-
-
-        <h1> Treatment </h1>
-        <p><strong>
-                <h3>Use any one Systemic Chemicals, which contain</h3>
-            </strong></p<br>
-
-        <h5>
-            <ul>
-                ● Topical Treatments:
-                - Benzoyl Peroxide: Kills bacteria and helps unclog pores.<br>
-                - Topical Antibiotics: Reduce inflammation and kill bacteria on the skin.<br>
-
-                ● Oral Medications:
-                - Antibiotics: Oral antibiotics may be prescribed to reduce inflammation and control
-                bacterial growth.<br>
-                - Isotretinoin (Accutane): A powerful medication used for severe acne. It reduces oil
-                production and has long-lasting effects.<br>
-
-                ● Lifestyle and Skincare:
-                - Gentle Cleansing: Using a mild cleanser to wash the face twice daily.<br>
-                - Regular Exercise: Physical activity can help manage stress, which can contribute to
-                acne.<br>
-
-                ● Procedures:
-                - Extraction: Removal of comedones or cysts by a dermatologist.<br>
-                - Laser Therapy: Uses light to reduce bacteria and inflammation.<br>
-            </ul>
-        </h5>
-
-
-
-        <!-- <p><strong><h3>किसी एक प्रणालीगत रसायन का उपयोग करें, जिसमें शामिल हो</h3></strong></p>
-        <p><h5>सल्फ्यूरिक एसिड / कार्बोक्सिन / ऑक्सीकारबॉक्सिन स्ट्रेप्टोमाइसिन सल्फेट 100 ग्राम और ऑक्सीक्लिराइड 500 ग्राम/एसीआर का छिड़काव करें</h5></p>
-        <h4>Steps:</h4><h5><ul>
-            <li>एसिड डिलिंटेड बीजों को 4 ग्राम/किलोग्राम कार्बोक्सिन से उपचारित करें।</li>
-            <li>जून-जुलाई के दौरान संक्रमित पौधों के अवशेषों को मिट्टी से हटा दें और जला दें।.</li>
-            <li>नाइट्रोजनी और फॉस्फेटिक उर्वरकों की संतुलित मात्रा के साथ पोटाश की बढ़ी हुई मात्रा का प्रयोग करें।</li>
-            <li>100 टन/हेक्टेयर की दर से गोबर की खाद या अन्य जैविक खाद की भारी मात्रा का प्रयोग करें।</li>
-            <li>0.05% बेनोमिल या 0.1% कार्बेन्डाजिम के साथ स्पॉट ड्रेंच।</li>
-        </ul></h5> -->
+        
+    </div>
+    <hr>
+    <div class="bottom">
+        <div class="heading-bottom">
+            <h2>Symptoms</h2>
+            <p>{{data.symptom_define|safe}} <h3>{{data.symptom_list|safe}}</h3></p>
+        </div>
+    </div>
+    <hr>
+    <div class="treatment">
+        <h2>Treatment</h2>
+        <p>{{data.treatment|safe}}</p>
     </div>
 
-
-    <br><br><br><br>
-    <hr>
-    <h3 style="color:red;"><strong>Disclaimer :</strong>All Chemicals and their Doses are not suggested by any Expert.
-        All the Product and doses are reffered by Google.</h3>
-    <!-- <h3 style="color:red;"><strong>अस्वीकरण :</strong>जितने भी प्रोडक्ट और उसके दोसेस दिए है वो सब किसी भी एक्सपर्ट्स ने सुझाए नहीं  है| सभी उत्पाद और खुराक Google द्वारा रेफर किए जाते हैं।</h3> -->
-    <hr>
-
-
-{% endblock %}
+    
+</body>
+</html>
