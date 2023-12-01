@@ -13,7 +13,7 @@ from keras.models import load_model
 result_page='result.html'
 #-----------------------------------------------------------------------------------------
 #-----------------------------Deep Learning Model Configuration----------------------------
-model_brain =load_model("models/brain_disease ETC retrain copy 10 epochsFinal.h5")
+model_brain =load_model("models/brain_disease_final.h5")
 model_skin=load_model("models/skindisease.h5")
 #------------------------------------------------------------------------------------------
 #------------------------------------------Skin Disease-------------------------------------
@@ -83,54 +83,83 @@ def predict_brain_disease(brainImage):
  
    
   pred = np.argmax(result) # get the index of max value
- 
   if pred == 0:
-    data={
-        "disease_name":"Alzeimer Mild Demented",
-        "abstraction":"Alzheimer's disease is a progressive neurodegenerative disease that causes memory loss and cognitive decline. Mild dementia is an early stage of Alzheimer's disease characterized by subtle memory problems and other cognitive changes. People with mild dementia may still be able to live independently and perform most of their daily activities, but they may need some assistance with complex tasks. There is no cure for Alzheimer's disease, but there are treatments that can help slow the progression of the disease and manage symptoms. Early diagnosis and treatment are important for people with mild dementia, as this can help them maintain their independence and quality of life for as long as possible.",
-        "symptom_define":"Alzheimer's disease is a progressive neurodegenerative disease that causes memory loss and cognitive decline. Mild dementia is an early stage of Alzheimer's disease characterized by subtle memory problems and other cognitive changes. People with mild dementia may still be able to live independently and perform most of their daily activities, but they may need some assistance with complex tasks.",
-        "symptom_list":"<li>Memory loss, especially for recent events</li><li>Difficulty finding words</li><li>Getting lost or disoriented</li><li>Changes in mood or personality</li><li>Loss of interest in activities that were once enjoyed</li><li>Changes in sleep patterns</li>",
-        "treatment":"There is no single test that can diagnose Alzheimer's disease, but doctors can use a combination of tests to make a diagnosis. These tests may include: A medical history and physical exam, Cognitive tests to assess memory, thinking skills, and other mental abilities, Brain scans, such as an MRI or CT scan, to look for changes in the brain, Blood tests to rule out other possible causes of dementia<br>There is no cure for Alzheimer's disease, but there are treatments that can help slow the progression of the disease and manage symptoms. These treatments may include:<li>Medications that can help with memory and other cognitive problems</li><li>Counseling and support for people with dementia and their caregivers</li><li>Changes in lifestyle, such as eating a healthy diet and getting regular exercise</li>"
-    }
-    return data # if  index is 0 then Alzeimer mild
-  elif pred == 1:
-      data={
-        "disease_name":"Alzeimer Modarate Demented",
-        "abstraction":"Alzheimer's disease is a progressive neurodegenerative disease that causes memory loss and cognitive decline. Mild dementia is an early stage of Alzheimer's disease characterized by subtle memory problems and other cognitive changes. People with mild dementia may still be able to live independently and perform most of their daily activities, but they may need some assistance with complex tasks. There is no cure for Alzheimer's disease, but there are treatments that can help slow the progression of the disease and manage symptoms. Early diagnosis and treatment are important for people with mild dementia, as this can help them maintain their independence and quality of life for as long as possible.",
-        "symptom_define":"Alzheimer's disease is a progressive neurodegenerative disease that causes memory loss and cognitive decline. Mild dementia is an early stage of Alzheimer's disease characterized by subtle memory problems and other cognitive changes. People with mild dementia may still be able to live independently and perform most of their daily activities, but they may need some assistance with complex tasks.",
-        "symptom_list":"<li>Memory loss, especially for recent events</li><li>Difficulty finding words</li><li>Getting lost or disoriented</li><li>Changes in mood or personality</li><li>Loss of interest in activities that were once enjoyed</li><li>Changes in sleep patterns</li>",
-        "treatment":"There is no single test that can diagnose Alzheimer's disease, but doctors can use a combination of tests to make a diagnosis. These tests may include: A medical history and physical exam, Cognitive tests to assess memory, thinking skills, and other mental abilities, Brain scans, such as an MRI or CT scan, to look for changes in the brain, Blood tests to rule out other possible causes of dementia<br>There is no cure for Alzheimer's disease, but there are treatments that can help slow the progression of the disease and manage symptoms. These treatments may include:<li>Medications that can help with memory and other cognitive problems</li><li>Counseling and support for people with dementia and their caregivers</li><li>Changes in lifestyle, such as eating a healthy diet and getting regular exercise</li>"
-    }
-      return data # if index is 1 then Alzeimer mild
-  elif pred == 2:
-      data={
+        print("GLIOMA")
+        data={
         "disease_name":"Glioma Brain Disease",
         "abstraction":"Glioma is a type of tumor that originates from glial cells, which are supportive cells in the central nervous system (CNS). Gliomas are the most common type of primary brain tumor, accounting for about 80% of all cases. They can occur in any part of the CNS, including the brain, spinal cord, and nerve roots.<br>Diagnosis of glioma is typically made using a combination of imaging tests, such as MRI or CT scans, and biopsies, which involve removing a small sample of tissue for examination under a microscope.<br>The prognosis for glioma depends on the grade of the tumor, the patient's age and overall health, and the response to treatment. Low-grade gliomas are generally slow-growing and can be managed with surgery, radiation therapy, and chemotherapy. High-grade gliomas are more aggressive and have a poorer prognosis. However, advances in treatment have improved survival rates for patients with high-grade gliomas in recent years.<br>If you are concerned that you or someone you know may have glioma, it is important to see a doctor for diagnosis and treatment. Early diagnosis and treatment can improve the chances of a good outcome.",
         "symptom_define":"The symptoms of glioma can vary depending on the location and size of the tumor. Some common symptoms include:",
         "symptom_list":"<li>Headaches: These may be constant, intermittent, or worse in the morning.</li><li>Seizures: These are more common with tumors located in the temporal lobe of the brain</li><li>Focal neurological deficits: These can include weakness or paralysis on one side of the body, difficulty with speech or vision, or problems with balance or coordination.</li><li>Cognitive changes: These can include memory problems, difficulty with concentration, or changes in personality or behavior.</li>",
         "treatment":"Treatment options for glioma depend on the grade of the tumor, the patient's age and overall health, and the location of the tumor. Treatment options may include: <li>Surgery: This is the primary treatment for low-grade gliomas. The goal of surgery is to remove as much of the tumor as possible without causing damage to healthy brain tissue.</li><li>Radiation therapy: This uses high-energy beams to kill cancer cells. Radiation therapy may be used after surgery to help reduce the risk of the tumor coming back, or it may be used as the primary treatment for high-grade gliomas.</li><li>Chemotherapy: This uses drugs to kill cancer cells throughout the body. Chemotherapy may be used in conjunction with radiation therapy or on its own for high-grade gliomas.</li><li>Targeted therapy: This uses drugs that specifically target cancer cells. Targeted therapy is a newer treatment option for glioma and is still under investigation.</li>"
     }
-      return data # if index is 2 then Glioma
-  elif pred == 3:
-      data={
+        return data # if index 0 burned leaf
+  elif pred==1:
+        print("MENIGIOMA")
+        data={
         "disease_name":"Meningioma Brain Disease",
-        "abstraction":"A meningioma is a type of tumor that arises from the meninges, which are the membranes that surround the brain and spinal cord. These tumors are the most common type of primary brain tumor, accounting for approximately 30% of all cases. They are typically benign (noncancerous) and slow-growing, and they rarely spread to other parts of the body.",
+        "abstraction":"A Meningioma is a type of tumor that arises from the meninges, which are the membranes that surround the brain and spinal cord. These tumors are the most common type of primary brain tumor, accounting for approximately 30% of all cases. They are typically benign (noncancerous) and slow-growing, and they rarely spread to other parts of the body.",
         "symptom_define":"The symptoms of meningioma depend on the location and size of the tumor. Some common symptoms include:",
-        "symptom_list":"<li>Headaches</li><li>Seizures</li><li>Vision problems</li><li>Numbness or weakness in the arms or legs</li><li>Difficulty with balance or coordination</li><li>Memory problems</li><li>Changes in personality or behavior</li>",
+        "symptom_list":"--",
         "treatment":"Treatment options for meningioma depend on the location and size of the tumor, the patient's age and overall health, and the presence of any symptoms. Treatment options may include: <li>Observation: For small, slow-growing tumors that are not causing any symptoms, observation may be the best course of treatment. The tumor will be monitored with regular imaging tests to check for any changes.</li><li>Surgery: This is the primary treatment for meningiomas that are causing symptoms or that are growing rapidly. The goal of surgery is to remove as much of the tumor as possible without causing damage to healthy brain tissue.</li><li>Radiation therapy: This uses high-energy beams to kill cancer cells. Radiation therapy may be used after surgery to help reduce the risk of the tumor coming back, or it may be used as the primary treatment for meningiomas that are difficult to remove surgically.</li><li>Stereotactic radiosurgery: This is a type of radiation therapy that uses very precisely focused beams to target the tumor. Stereotactic radiosurgery is often used for meningiomas that are located in difficult-to-reach areas of the brain.</li>"
     }
-      return data # if index is 3 thenmeningioma
-  elif pred == 4:
-      data={
+        return data
+  elif pred==2:
+        print("NO TUMOR")
+        data={
         "disease_name":"Healthy Brain",
-        "abstraction":"Atopic dermatitis(Eczema) is a condition that causes dry, itchy and inflamed skin. It's common in young children but can occur at any age. Atopic dermatitis is long lasting(Chronic) and tends to flare sometimes. It can be irritating but it's not contagious. <br> People with atopic dermatites are at risk of diveloping food allergies, high fever and asthma. <br> Moisturizing regularly and following other skin care habits can relieve itching and prevent new outbreaks(flares). Treatment may also include medicated ointments or cream.",
-        "symptom_define":"In infants, the itchy rash can lead to an oozing, crusting condition, mainly on the face and scalp. It can also happen on their arms, legs, back, and chest. Newborn babies can show symptoms within the first few weeks or months after birth. The rash usually happens on your face, the backs of your knees, wrists, hands, or feet. Your skin will probably be very dry, thick, or scaly. In fair-skinned people, these areas may start out reddish and then turn brown. In darker-skinned people, eczema can affect skin pigments, making the affected area lighter or darker. Developing a basic skin care routine may help prevent eczema flares. The following tips may help reduce the drying effects of bathing:",
+        "abstraction":"A healthy brain is essential for overall well-being and cognitive functioning. The brain is a complex organ responsible for controlling various bodily functions, thoughts, emotions, and behaviors. Maintaining a healthy brain involves a holistic approach that incorporates various lifestyle factors, cognitive stimulation, and social engagement. These theories collectively provide insights into the multifaceted nature of brain health and offer guidance for individuals seeking to promote cognitive well-being throughout their lives.",
+        "symptom_define":"---",
         "symptom_list":"<li>Dry, cracked skin</li><li>Itchiness (pruritus)</li><li>Rash on swollen skin that varies in color depending on your skin color</li><li>Oozing and crusting, Thickened skin</li><li>Small, raised bumps, on brown or Black skin</li><li>Darkening of the skin around the eyes Raw, sensitive skin from scratching</li>",
-        "treatment":"<li>Moisturize your skin at least twice a day</li><li>Take a daily bath or Shower</li><li>Use a gentle, nonsoap cleaner</li>"
+        "treatment":"<li>Engage in regular exercise to improve blood flow to the brain.</li><li>Aim for at least 150 minutes of moderate-intensity aerobic exercise per week.</li><li>Consume a diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats.</li><li>Drink an adequate amount of water daily to support overall bodily functions, including brain function.</li><li>Practice stress management techniques such as mindfulness, meditation, deep breathing, or yoga.</li>"
     }
-      return data # if index is 4 then No tumor
-  else:
-    print("No Image Found!")
+        return data
+  # if pred == 0:
+  #   data={
+  #       "disease_name":"Alzeimer Mild Demented",
+  #       "abstraction":"Alzheimer's disease is a progressive neurodegenerative disease that causes memory loss and cognitive decline. Mild dementia is an early stage of Alzheimer's disease characterized by subtle memory problems and other cognitive changes. People with mild dementia may still be able to live independently and perform most of their daily activities, but they may need some assistance with complex tasks. There is no cure for Alzheimer's disease, but there are treatments that can help slow the progression of the disease and manage symptoms. Early diagnosis and treatment are important for people with mild dementia, as this can help them maintain their independence and quality of life for as long as possible.",
+  #       "symptom_define":"Alzheimer's disease is a progressive neurodegenerative disease that causes memory loss and cognitive decline. Mild dementia is an early stage of Alzheimer's disease characterized by subtle memory problems and other cognitive changes. People with mild dementia may still be able to live independently and perform most of their daily activities, but they may need some assistance with complex tasks.",
+  #       "symptom_list":"<li>Memory loss, especially for recent events</li><li>Difficulty finding words</li><li>Getting lost or disoriented</li><li>Changes in mood or personality</li><li>Loss of interest in activities that were once enjoyed</li><li>Changes in sleep patterns</li>",
+  #       "treatment":"There is no single test that can diagnose Alzheimer's disease, but doctors can use a combination of tests to make a diagnosis. These tests may include: A medical history and physical exam, Cognitive tests to assess memory, thinking skills, and other mental abilities, Brain scans, such as an MRI or CT scan, to look for changes in the brain, Blood tests to rule out other possible causes of dementia<br>There is no cure for Alzheimer's disease, but there are treatments that can help slow the progression of the disease and manage symptoms. These treatments may include:<li>Medications that can help with memory and other cognitive problems</li><li>Counseling and support for people with dementia and their caregivers</li><li>Changes in lifestyle, such as eating a healthy diet and getting regular exercise</li>"
+  #   }
+  #   return data # if  index is 0 then Alzeimer mild
+  # elif pred == 1:
+  #     data={
+  #       "disease_name":"Alzeimer Modarate Demented",
+  #       "abstraction":"Alzheimer's disease is a progressive neurodegenerative disease that causes memory loss and cognitive decline. Mild dementia is an early stage of Alzheimer's disease characterized by subtle memory problems and other cognitive changes. People with mild dementia may still be able to live independently and perform most of their daily activities, but they may need some assistance with complex tasks. There is no cure for Alzheimer's disease, but there are treatments that can help slow the progression of the disease and manage symptoms. Early diagnosis and treatment are important for people with mild dementia, as this can help them maintain their independence and quality of life for as long as possible.",
+  #       "symptom_define":"Alzheimer's disease is a progressive neurodegenerative disease that causes memory loss and cognitive decline. Mild dementia is an early stage of Alzheimer's disease characterized by subtle memory problems and other cognitive changes. People with mild dementia may still be able to live independently and perform most of their daily activities, but they may need some assistance with complex tasks.",
+  #       "symptom_list":"<li>Memory loss, especially for recent events</li><li>Difficulty finding words</li><li>Getting lost or disoriented</li><li>Changes in mood or personality</li><li>Loss of interest in activities that were once enjoyed</li><li>Changes in sleep patterns</li>",
+  #       "treatment":"There is no single test that can diagnose Alzheimer's disease, but doctors can use a combination of tests to make a diagnosis. These tests may include: A medical history and physical exam, Cognitive tests to assess memory, thinking skills, and other mental abilities, Brain scans, such as an MRI or CT scan, to look for changes in the brain, Blood tests to rule out other possible causes of dementia<br>There is no cure for Alzheimer's disease, but there are treatments that can help slow the progression of the disease and manage symptoms. These treatments may include:<li>Medications that can help with memory and other cognitive problems</li><li>Counseling and support for people with dementia and their caregivers</li><li>Changes in lifestyle, such as eating a healthy diet and getting regular exercise</li>"
+  #   }
+  #     return data # if index is 1 then Alzeimer mild
+  # elif pred == 2:
+  #     data={
+  #       "disease_name":"Glioma Brain Disease",
+  #       "abstraction":"Glioma is a type of tumor that originates from glial cells, which are supportive cells in the central nervous system (CNS). Gliomas are the most common type of primary brain tumor, accounting for about 80% of all cases. They can occur in any part of the CNS, including the brain, spinal cord, and nerve roots.<br>Diagnosis of glioma is typically made using a combination of imaging tests, such as MRI or CT scans, and biopsies, which involve removing a small sample of tissue for examination under a microscope.<br>The prognosis for glioma depends on the grade of the tumor, the patient's age and overall health, and the response to treatment. Low-grade gliomas are generally slow-growing and can be managed with surgery, radiation therapy, and chemotherapy. High-grade gliomas are more aggressive and have a poorer prognosis. However, advances in treatment have improved survival rates for patients with high-grade gliomas in recent years.<br>If you are concerned that you or someone you know may have glioma, it is important to see a doctor for diagnosis and treatment. Early diagnosis and treatment can improve the chances of a good outcome.",
+  #       "symptom_define":"The symptoms of glioma can vary depending on the location and size of the tumor. Some common symptoms include:",
+  #       "symptom_list":"<li>Headaches: These may be constant, intermittent, or worse in the morning.</li><li>Seizures: These are more common with tumors located in the temporal lobe of the brain</li><li>Focal neurological deficits: These can include weakness or paralysis on one side of the body, difficulty with speech or vision, or problems with balance or coordination.</li><li>Cognitive changes: These can include memory problems, difficulty with concentration, or changes in personality or behavior.</li>",
+  #       "treatment":"Treatment options for glioma depend on the grade of the tumor, the patient's age and overall health, and the location of the tumor. Treatment options may include: <li>Surgery: This is the primary treatment for low-grade gliomas. The goal of surgery is to remove as much of the tumor as possible without causing damage to healthy brain tissue.</li><li>Radiation therapy: This uses high-energy beams to kill cancer cells. Radiation therapy may be used after surgery to help reduce the risk of the tumor coming back, or it may be used as the primary treatment for high-grade gliomas.</li><li>Chemotherapy: This uses drugs to kill cancer cells throughout the body. Chemotherapy may be used in conjunction with radiation therapy or on its own for high-grade gliomas.</li><li>Targeted therapy: This uses drugs that specifically target cancer cells. Targeted therapy is a newer treatment option for glioma and is still under investigation.</li>"
+  #   }
+  #     return data # if index is 2 then Glioma
+  # elif pred == 3:
+  #     data={
+  #       "disease_name":"Meningioma Brain Disease",
+  #       "abstraction":"A meningioma is a type of tumor that arises from the meninges, which are the membranes that surround the brain and spinal cord. These tumors are the most common type of primary brain tumor, accounting for approximately 30% of all cases. They are typically benign (noncancerous) and slow-growing, and they rarely spread to other parts of the body.",
+  #       "symptom_define":"The symptoms of meningioma depend on the location and size of the tumor. Some common symptoms include:",
+  #       "symptom_list":"<li>Headaches</li><li>Seizures</li><li>Vision problems</li><li>Numbness or weakness in the arms or legs</li><li>Difficulty with balance or coordination</li><li>Memory problems</li><li>Changes in personality or behavior</li>",
+  #       "treatment":"Treatment options for meningioma depend on the location and size of the tumor, the patient's age and overall health, and the presence of any symptoms. Treatment options may include: <li>Observation: For small, slow-growing tumors that are not causing any symptoms, observation may be the best course of treatment. The tumor will be monitored with regular imaging tests to check for any changes.</li><li>Surgery: This is the primary treatment for meningiomas that are causing symptoms or that are growing rapidly. The goal of surgery is to remove as much of the tumor as possible without causing damage to healthy brain tissue.</li><li>Radiation therapy: This uses high-energy beams to kill cancer cells. Radiation therapy may be used after surgery to help reduce the risk of the tumor coming back, or it may be used as the primary treatment for meningiomas that are difficult to remove surgically.</li><li>Stereotactic radiosurgery: This is a type of radiation therapy that uses very precisely focused beams to target the tumor. Stereotactic radiosurgery is often used for meningiomas that are located in difficult-to-reach areas of the brain.</li>"
+  #   }
+  #     return data # if index is 3 thenmeningioma
+  # elif pred == 4:
+  #     data={
+  #       "disease_name":"Healthy Brain",
+  #       "abstraction":"Atopic dermatitis(Eczema) is a condition that causes dry, itchy and inflamed skin. It's common in young children but can occur at any age. Atopic dermatitis is long lasting(Chronic) and tends to flare sometimes. It can be irritating but it's not contagious. <br> People with atopic dermatites are at risk of diveloping food allergies, high fever and asthma. <br> Moisturizing regularly and following other skin care habits can relieve itching and prevent new outbreaks(flares). Treatment may also include medicated ointments or cream.",
+  #       "symptom_define":"In infants, the itchy rash can lead to an oozing, crusting condition, mainly on the face and scalp. It can also happen on their arms, legs, back, and chest. Newborn babies can show symptoms within the first few weeks or months after birth. The rash usually happens on your face, the backs of your knees, wrists, hands, or feet. Your skin will probably be very dry, thick, or scaly. In fair-skinned people, these areas may start out reddish and then turn brown. In darker-skinned people, eczema can affect skin pigments, making the affected area lighter or darker. Developing a basic skin care routine may help prevent eczema flares. The following tips may help reduce the drying effects of bathing:",
+  #       "symptom_list":"<li>Dry, cracked skin</li><li>Itchiness (pruritus)</li><li>Rash on swollen skin that varies in color depending on your skin color</li><li>Oozing and crusting, Thickened skin</li><li>Small, raised bumps, on brown or Black skin</li><li>Darkening of the skin around the eyes Raw, sensitive skin from scratching</li>",
+  #       "treatment":"<li>Moisturize your skin at least twice a day</li><li>Take a daily bath or Shower</li><li>Use a gentle, nonsoap cleaner</li>"
+  #   }
+  #     return data # if index is 4 then No tumor
+  # else:
+  #   print("No Image Found!")
      
  
 # Create flask instance
@@ -188,4 +217,4 @@ def predictskin():
 # For local system & cloud
 if __name__ == "__main__":
     #app.run(debug = False)
-    app.run(threaded=True) 
+    app.run(threaded=True, port=5001) 
