@@ -1,36 +1,58 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
 }
-
-.card-style {
-    background-color: #dcdcdc;
+body{
+    margin: 10%;
+}
+.parent{
+    display: grid;
+    grid-template-columns: 50% 50%;
 
 }
-
-.content {
-    padding: 15px;
+.parent .photo-left img{
+    width: 500px;
+    height: 500px;
+}
+.parent .right{
+    display: grid;
+    grid-template-rows: 20% 65%;
+}
+.parent .right .define-right-bottom h3{
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.parent .heading-right{
+    background: red;
+    text-align: center;
+}
+.parent .heading-right h1{
     color: white;
-    background-color: rgb(153, 156, 150);
-    /* font-size: 1rem; */
+    font-size: 50px;
 }
-
-@media (max-width: 430px) and (min-width: 200px) {
-
-
-    .contents {
-        font-size: 0.6rem;
-        color: chartreuse;
-    }
-
-    .content-h1 {
-
-        font-size: 1rem;
-    }
+.parent .right .define-right-bottom p{
+    text-align: justify;
+    font-size: 18px;
 }
-
-.border img {
-    border-radius: 15px;
-    border: 2px solid black;
+.bottom{
+    display: grid;
+    margin-top: 10px;
+}
+.bottom .heading-bottom h2{
+    font-weight: 900;
+    margin-top: 10px;
+}
+.bottom .heading-bottom p{
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: justify;
+}
+.treatment{
+    margin-top: 10px;
+}
+.treatment p{
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 18px ;
 }
