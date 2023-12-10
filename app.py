@@ -13,7 +13,7 @@ from keras.models import load_model
 result_page='result.html'
 #-----------------------------------------------------------------------------------------
 #-----------------------------Deep Learning Model Configuration----------------------------
-model_brain =load_model("models/brain_disease_final.h5")
+model_brain =load_model("models/brain_disease.h5")
 model_skin=load_model("models/skindisease.h5")
 #------------------------------------------------------------------------------------------
 #------------------------------------------Skin Disease-------------------------------------
@@ -72,17 +72,17 @@ def predict_skin_disease(skinImage):
 #----------------------------------------------------------------------------------------------- 
 #-----------------------------------Brain disease-----------------------------------------------
 def predict_brain_disease(brainImage):
+  print("image mil gayi")
   print(brainImage)
   test_image = load_img(brainImage, target_size = (224, 224)) # load image 
-
-   
   test_image = img_to_array(test_image)/255 # convert image to np array and normalize
   test_image = np.expand_dims(test_image, axis = 0) # change dimention 3D to 4D
    
-  result = model_skin.predict(test_image).round(3) # predict diseased palnt or not
+  result = model_brain.predict(test_image).round(3) # predict diseased palnt or not
  
    
   pred = np.argmax(result) # get the index of max value
+  print(pred)
   if pred == 0:
         print("GLIOMA")
         data={
@@ -197,6 +197,7 @@ def predictbrain():
  
         print("@@ Predicting class......")
         data = predict_brain_disease(brainImage=file_path)
+        print("pridiction done. /predict-brain")
         return render_template(result_page, data = data, user_image = file_path)
 @app.route("/predict-skin", methods = ['GET','POST'])
 def predictskin():
